@@ -1,0 +1,8 @@
+# OS/editor temporary files
+.DS_Store
+*.swp
+*.swo
+*.tmp
+
+# Neovim runtime/generated data
+shada/
