@@ -1,3 +1,6 @@
+
+> [!WARNING] 
+> This is for my presonal use, so if u want to read this >.< READ IT AT YOUR OWN RISK
 # Neovim Configuration
 
 This repository contains my personal Neovim configuration.
