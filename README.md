@@ -47,5 +47,20 @@ To update the configuration later:
 cd ~/.config/nvim
 git pull
 ```
+> [!IMPORTANT] 
+> System Dependencies is important so your nvim setup as ide to work perfectly... else is your choice
+
+## System Dependencies
+
+The following system tools are used by this Neovim configuration:
+
+- Git
+- ripgrep
+- fd
+- fzf
+- lazygit
+- Nerd Font
+- wl-clipboard (Wayland)
+
 
 Enjoy!
