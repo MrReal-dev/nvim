@@ -6,12 +6,14 @@ require("mason-lspconfig").setup({
   },
 })
 
-require("mason-lspconfig").setup_handlers({
-  function(server_name)
-    vim.lsp.config(server_name, {
-      capabilities = capabilities,
-    })
+-- require("mason-lspconfig").setup_handlers({
+--   function(server_name)
+--     vim.lsp.config(server_name, {
+--       capabilities = capabilities,
+--     })
+--
+--     vim.lsp.enable(server_name)
+--   end,
+-- })
 
-    vim.lsp.enable(server_name)
-  end,
-})
+require("config.languages.python")
