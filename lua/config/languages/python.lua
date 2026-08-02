@@ -1,6 +1,6 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local debugpy_path = vim.fn.exepath("debugpy")
+-- local debugpy_path = vim.fn.exepath("debugpy")
 local python_path = vim.fn.exepath("python")
 
 local pyright_settings = {
@@ -17,6 +17,13 @@ local pyright_settings = {
 
 vim.lsp.config("pyright", {
   capabilities = capabilities,
+  root_markers = {
+    ".git",
+    "pyrightconfig.json",
+    "pyproject.toml",
+    "setup.py",
+    "setup.cfg",
+  },
   settings = pyright_settings,
 })
 
@@ -37,7 +44,7 @@ local dap = require("dap")
 
 dap.adapters.python = {
   type = "executable",
-  command = debugpy_path,
+  command = python_path,
   args = { "-m", "debugpy.adapter" },
 }
 
