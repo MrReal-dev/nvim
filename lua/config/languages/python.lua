@@ -1,8 +1,12 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+local debugpy_path = vim.fn.exepath("debugpy")
+local python_path = vim.fn.exepath("python")
+
 local pyright_settings = {
   python = {
-    pythonPath = vim.env.CONDA_PREFIX and vim.env.CONDA_PREFIX .. "/bin/python" or nil,
+    pythonPath = python_path ~= "" and python_path or nil,
+
     analysis = {
       autoSearchPaths = true,
       diagnosticMode = "openFilesOnly",
@@ -33,7 +37,7 @@ local dap = require("dap")
 
 dap.adapters.python = {
   type = "executable",
-  command = vim.env.CONDA_PREFIX .. "/bin/python",
+  command = debugpy_path,
   args = { "-m", "debugpy.adapter" },
 }
 
@@ -43,6 +47,6 @@ dap.configurations.python = {
     request = "launch",
     name = "Launch file",
     program = "${file}",
-    python = vim.env.CONDA_PREFIX .. "/bin/python",
+    python = python_path,
   },
 }
